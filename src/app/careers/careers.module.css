@@ -1,0 +1,21 @@
+/* reviews.module.css */
+
+.reviewCard {
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reviewCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.star {
+    color: #ddd;
+    font-size: 1.25rem;
+    margin-right: 4px;
+}
+
+.filled {
+    color: #f59e0b; /* Yellow color for filled stars */
+}

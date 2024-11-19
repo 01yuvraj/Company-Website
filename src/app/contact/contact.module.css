@@ -1,0 +1,31 @@
+/* contact.module.css */
+
+.contactCard {
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contactCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.inputField {
+    border: 1px solid #ddd;
+    transition: border-color 0.3s ease;
+}
+
+.inputField:focus {
+    border-color: #f59e0b; /* Yellow color for focus */
+    outline: none;
+}
+
+.submitButton {
+    background-color: #f59e0b;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+    background-color: #d97706; /* Slightly darker yellow */
+}
