@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
 const LandingPage = () => {
@@ -23,6 +24,7 @@ const LandingPage = () => {
   ];
 
   const heroImages = ["/images/bridge.jpg", "/images/building.jpg"];
+  const aboutUs = ["/images/about-us.jpg"];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -47,7 +49,8 @@ const LandingPage = () => {
             <div className="w-full lg:w-4/6 order-1 lg:order-2">
               <div className="relative aspect-video lg:aspect-[16/9] rounded-xl overflow-hidden">
                 {heroImages.map((image, index) => (
-                  <img
+                  <Image
+                  layout="fill"
                     key={index}
                     src={image}
                     alt={`Slide ${index + 1}`}
@@ -128,7 +131,7 @@ const LandingPage = () => {
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
             <div className="w-full lg:w-1/2">
               <img
-                src="\images\about-us.jpg"
+                src={aboutUs}
                 alt="About us"
                 className="rounded-lg shadow-lg w-full"
               />
