@@ -142,7 +142,7 @@ const LandingPage = () => {
               <div className="space-y-4">
                 <p className="text-gray-600">
                   With over 30 years of experience in the construction industry,
-                  we've built our reputation on quality, reliability, and
+                  we&apos;ve built our reputation on quality, reliability, and
                   customer satisfaction.
                 </p>
                 <ul className="space-y-2">

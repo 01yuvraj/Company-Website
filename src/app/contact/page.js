@@ -20,7 +20,7 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto">
-            We're here to answer any questions you may have. Reach out and we'll respond as soon as possible.
+            We&apos;re here to answer any questions you may have. Reach out and we&apos;ll respond as soon as possible.
           </p>
         </div>
       </div>
@@ -95,7 +95,7 @@ export default function ContactPage() {
       <div className="bg-yellow-500 py-16 mt-12">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
-            Let's Start a Conversation
+            Let&apos;s Start a Conversation
           </h2>
           <p className="text-white text-lg mb-8">
             Feel free to reach out for inquiries, collaborations, or just to
