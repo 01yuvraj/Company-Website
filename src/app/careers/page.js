@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import styles from './careers.module.css';
+import Link from "next/link";
 
 export default function ReviewsPage() {
   const reviews = [
@@ -92,12 +93,12 @@ export default function ReviewsPage() {
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Would You Like to Work with Us?</h2>
           <p className="text-white text-lg mb-8">Get in touch today and let’s discuss how we can help with your next project.</p>
-          <a
+          <Link
             href="/contact"
             className="inline-block bg-white text-yellow-500 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-300"
           >
             Contact Us
-          </a>
+          </Link>
         </div>
       </div>
     </div>

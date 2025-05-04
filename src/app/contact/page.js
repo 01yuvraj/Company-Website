@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import styles from "./contact.module.css";
+import Link from "next/link";
 
 export default function ContactPage() {
   const [isClient, setIsClient] = useState(false);
@@ -100,12 +101,12 @@ export default function ContactPage() {
             Feel free to reach out for inquiries, collaborations, or just to
             say hello.
           </p>
-          <a
+          <Link
             href="/"
             className="inline-block bg-white text-yellow-500 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-300"
           >
             Return Home
-          </a>
+          </Link>
         </div>
       </div>
     </div>

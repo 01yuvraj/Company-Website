@@ -1,5 +1,6 @@
 import React from "react";
 import styles from './services.module.css';
+import Link from "next/link";
 
 export default function ServicesPage() {
   const services = [
@@ -86,12 +87,12 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Ready to Start Your Project?</h2>
           <p className="text-white text-lg mb-8">Contact us today for a free consultation</p>
-          <a
+          <Link
             href="/contact"
             className="inline-block bg-white text-yellow-500 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-300"
           >
             Get in Touch
-          </a>
+          </Link>
         </div>
       </div>
     </div>

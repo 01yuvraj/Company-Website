@@ -1,5 +1,6 @@
 import React from "react";
 import styles from './products.module.css';
+import Link from "next/link";
 
 export default function ProductsPage() {
   const products = [
@@ -85,12 +86,12 @@ export default function ProductsPage() {
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Looking for Quality Products?</h2>
           <p className="text-white text-lg mb-8">Contact us today to discuss your requirements and get the best materials for your projects</p>
-          <a
+          <Link
             href="/contact"
             className="inline-block bg-white text-yellow-500 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-300"
           >
             Get in Touch
-          </a>
+          </Link>
         </div>
       </div>
     </div>

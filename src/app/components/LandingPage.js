@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 const LandingPage = () => {
@@ -172,12 +173,12 @@ const LandingPage = () => {
           <p className="text-lg lg:text-xl mb-6 lg:mb-8">
             Contact us today for a free consultation
           </p>
-          <a
+          <Link
             href="/contact"
             className="inline-block bg-yellow-500 text-white px-6 py-3 lg:px-8 lg:py-3 rounded-lg hover:bg-yellow-600 transition duration-300"
           >
             Get in Touch
-          </a>
+          </Link>
         </div>
       </div>
     </main>
