@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -64,8 +65,10 @@ export default function RootLayout({ children }) {
             One Link Precast
           </div>
           <div className="flex-shrink-0"></div>
-          <img
+          <Image
             src="/images/logo.jpg"
+            width={110}
+            height={110}
             alt="Company Logo"
             className="w-36 lg:w-44 h-16 lg:h-20 object-contain -ml-12"
           />
