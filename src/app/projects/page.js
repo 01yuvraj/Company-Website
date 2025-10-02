@@ -44,10 +44,10 @@ export default function ProjectsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Page Header */}
-      <div className="bg-gray-100 py-12">
-        <div className="max-w-7xl mx-auto px-4 text-center"> {/* Center Alignment */}
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">Our Completed Projects</h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto"> {/* Center Text */}
+      <div className="bg-white py-12 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h1 className="text-4xl font-bold text-red-600 mb-6">Our Completed Projects</h1>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             Discover our portfolio of completed projects that demonstrate our commitment to quality and excellence. Each project showcases our expertise in different construction domains.
           </p>
         </div>
@@ -57,19 +57,19 @@ export default function ProjectsPage() {
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className={`${styles.projectItem} overflow-hidden rounded-lg shadow-md`}>
+            <div key={index} className={`${styles.projectItem} overflow-hidden rounded-lg shadow-md border-t-4 border-red-600`}>
               <img
                 src={project.src}
                 alt={project.alt}
                 className="w-full h-64 object-cover transition-transform duration-500 ease-in-out transform hover:scale-105"
               />
               <div className="p-4">
-                <h3 className="text-xl font-semibold text-gray-900">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <h3 className="text-xl font-semibold text-red-600">{project.title}</h3>
+                <p className="text-gray-700 mb-4">{project.description}</p>
                 <ul className="space-y-2">
                   {project.highlights.map((highlight, idx) => (
                     <li key={idx} className="flex items-center space-x-2 text-gray-700">
-                      <span className="w-2 h-2 bg-yellow-500 rounded-full flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-red-600 rounded-full flex-shrink-0"></span>
                       <span>{highlight}</span>
                     </li>
                   ))}
@@ -81,13 +81,13 @@ export default function ProjectsPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-yellow-500 py-16 mt-12">
+      <div className="bg-red-600 py-16 mt-12">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Have a Project in Mind?</h2>
           <p className="text-white text-lg mb-8">Contact us today to discuss your project needs and see how we can bring your vision to life</p>
           <Link
             href="/contact"
-            className="inline-block bg-white text-yellow-500 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-300"
+            className="inline-block bg-white text-red-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-300"
           >
             Get in Touch
           </Link>

@@ -45,10 +45,10 @@ export default function ReviewsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Page Header */}
-      <div className="bg-gray-100 py-12">
-        <div className="max-w-7xl mx-auto px-4 text-center"> {/* Center Alignment */}
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">Client Reviews</h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto"> {/* Center Text */}
+      <div className="bg-white py-12 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h1 className="text-4xl font-bold text-red-600 mb-6">Client Reviews</h1>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             We take pride in delivering excellent service to our clients. Here’s what some of our clients have to say about working with us.
           </p>
         </div>
@@ -58,7 +58,7 @@ export default function ReviewsPage() {
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {reviews.map((review, index) => (
-            <div key={index} className={`${styles.reviewCard} bg-white rounded-lg shadow-md p-6`}>
+            <div key={index} className={`${styles.reviewCard} bg-white rounded-lg shadow-md p-6 border-t-4 border-red-600`}>
               <div className="flex items-center mb-4">
                 <img
                   src={review.image}
@@ -66,7 +66,7 @@ export default function ReviewsPage() {
                   className="w-16 h-16 rounded-full mr-4"
                 />
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900">{review.name}</h3>
+                  <h3 className="text-xl font-semibold text-red-600">{review.name}</h3>
                   <p className="text-sm text-gray-500">{review.title}</p>
                 </div>
               </div>
@@ -75,9 +75,7 @@ export default function ReviewsPage() {
                 {[...Array(5)].map((_, starIndex) => (
                   <span
                     key={starIndex}
-                    className={`${styles.star} ${
-                      starIndex < review.rating ? styles.filled : ""
-                    }`}
+                    className={`${styles.star} ${starIndex < review.rating ? "text-red-600" : "text-gray-300"} text-xl`}
                   >
                     ★
                   </span>
@@ -89,13 +87,13 @@ export default function ReviewsPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-yellow-500 py-16 mt-12">
+      <div className="bg-red-600 py-16 mt-12">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Would You Like to Work with Us?</h2>
           <p className="text-white text-lg mb-8">Get in touch today and let’s discuss how we can help with your next project.</p>
           <Link
             href="/contact"
-            className="inline-block bg-white text-yellow-500 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-300"
+            className="inline-block bg-white text-red-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-300"
           >
             Contact Us
           </Link>

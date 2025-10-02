@@ -33,10 +33,10 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Page Header */}
-      <div className="bg-gray-100 py-12">
-        <div className="max-w-7xl mx-auto px-4 text-center"> {/* Center Alignment */}
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">Our Services</h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto"> {/* Center Text */}
+      <div className="bg-white py-12 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h1 className="text-4xl font-bold text-red-600 mb-6">Our Services</h1>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             We offer comprehensive construction services tailored to meet your specific needs. 
             From residential to commercial projects, our experienced team ensures quality and satisfaction.
           </p>
@@ -49,7 +49,7 @@ export default function ServicesPage() {
           {services.map((service, index) => (
             <div 
               key={index} 
-              className={`${styles.serviceCard} bg-white rounded-lg shadow-md overflow-hidden border border-gray-200`}
+              className={`${styles.serviceCard} bg-white rounded-lg shadow-md overflow-hidden border-t-4 border-red-600`}
             >
               <div className={styles.serviceImage}>
                 <img
@@ -59,10 +59,10 @@ export default function ServicesPage() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl font-bold text-red-600 mb-4">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="text-gray-700 mb-6">
                   {service.description}
                 </p>
                 <ul className="space-y-3">
@@ -71,7 +71,7 @@ export default function ServicesPage() {
                       key={idx} 
                       className="flex items-center space-x-3 text-gray-700"
                     >
-                      <span className="w-2 h-2 bg-yellow-500 rounded-full flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-red-600 rounded-full flex-shrink-0"></span>
                       <span>{feature}</span>
                     </li>
                   ))}
@@ -83,13 +83,13 @@ export default function ServicesPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-yellow-500 py-16 mt-12">
+      <div className="bg-red-600 py-16 mt-12">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Ready to Start Your Project?</h2>
           <p className="text-white text-lg mb-8">Contact us today for a free consultation</p>
           <Link
             href="/contact"
-            className="inline-block bg-white text-yellow-500 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-300"
+            className="inline-block bg-white text-red-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-300"
           >
             Get in Touch
           </Link>

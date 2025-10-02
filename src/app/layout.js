@@ -4,7 +4,13 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import "./globals.css";
-import { Phone, Mail, Clock, MapPin, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
+
+// Custom CSS for black outline
+const outlinedText = {
+  WebkitTextStroke: "1px black",
+  color: "red", // fill inside
+};
 
 export default function RootLayout({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +27,7 @@ export default function RootLayout({ children }) {
     { name: "Products", path: "/products" },
     { name: "Projects", path: "/projects" },
     { name: "Gallery", path: "/gallery" },
-    { name: "Careers", path: "/careers" },
+    { name: "Reviews", path: "/reviews" },
     { name: "Contact Us", path: "/contact" },
   ];
 
@@ -32,15 +38,12 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     const handleScroll = () => {
       if (isMenuOpen) return;
-
       const currentScrollY = window.scrollY;
       const newDirection = currentScrollY > lastScrollY ? "down" : "up";
-
       setScrollDirection(newDirection);
       setShowRibbon(currentScrollY < 50 || newDirection === "up");
       setLastScrollY(currentScrollY);
     };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isMenuOpen, lastScrollY]);
@@ -51,26 +54,32 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="flex flex-col min-h-screen">
-        <header className="flex justify-between items-center p-4 lg:p-6 bg-gray-900 text-white">
-          <div className="text-lg lg:text-2xl font-bold tracking-tight">
-            Construction Co.
+      <body className="flex flex-col min-h-screen bg-gray-50">
+        {/* Header */}
+        <header className="flex justify-between items-center p-2 lg:p-4 bg-gray-50/80 shadow-md text-gray-800 border-b-4 border-red-600 backdrop-blur-sm">
+          <div
+            className="text-2xl lg:text-5xl font-bold tracking-tight"
+            style={outlinedText}
+          >
+            One Link Precast
           </div>
+          <div className="flex-shrink-0"></div>
           <img
-            src="/images/logo.png"
+            src="/images/logo.jpg"
             alt="Company Logo"
-            className="w-12 lg:w-16 h-12 lg:h-16 object-contain"
+            className="w-36 lg:w-44 h-16 lg:h-20 object-contain -ml-12"
           />
         </header>
 
+        {/* Navigation Ribbon */}
         <div
-          className={`sticky top-0 z-50 transform transition-transform duration-300 ${
+          className={`sticky top-0 z-50 transform transition-transform duration-300 backdrop-blur-sm bg-gray-50/80 ${
             !showRibbon && !isMenuOpen ? "-translate-y-full" : "translate-y-0"
           }`}
         >
-          <div className="bg-yellow-500 shadow-md">
+          <div className="bg-red-600 shadow-md/80">
             <div className="container mx-auto px-4">
-              <div className="flex items-center h-14 lg:h-16 relative">
+              <div className="flex items-center h-12 lg:h-14 relative">
                 <nav className="hidden lg:flex flex-1 justify-center items-center space-x-2">
                   {navItems.map((item) => (
                     <Link
@@ -78,8 +87,8 @@ export default function RootLayout({ children }) {
                       href={item.path}
                       className={`px-4 py-2 text-white text-sm font-medium rounded-md transition-colors ${
                         currentPath === item.path
-                          ? "bg-yellow-600"
-                          : "hover:bg-yellow-600/50"
+                          ? "bg-red-700"
+                          : "hover:bg-red-700/90"
                       }`}
                     >
                       {item.name}
@@ -87,8 +96,9 @@ export default function RootLayout({ children }) {
                   ))}
                 </nav>
 
+                {/* Mobile Menu Toggle */}
                 <button
-                  className="lg:hidden p-2 text-white hover:bg-yellow-600 rounded-md transition-colors absolute right-0"
+                  className="lg:hidden p-2 text-white hover:bg-red-700 rounded-md transition-colors absolute right-0"
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                   aria-label="Toggle menu"
                 >
@@ -98,8 +108,9 @@ export default function RootLayout({ children }) {
             </div>
           </div>
 
+          {/* Mobile Menu */}
           <div
-            className={`lg:hidden bg-yellow-500 shadow-lg transition-all duration-300 ${
+            className={`lg:hidden bg-red-600 shadow-lg transition-all duration-300 ${
               isMenuOpen ? "max-h-screen" : "max-h-0"
             } overflow-hidden`}
           >
@@ -110,8 +121,8 @@ export default function RootLayout({ children }) {
                   href={item.path}
                   className={`px-4 py-2 text-white text-base font-medium w-full transition-colors ${
                     currentPath === item.path
-                      ? "bg-yellow-600"
-                      : "hover:bg-yellow-600/50"
+                      ? "bg-red-700"
+                      : "hover:bg-red-700/90"
                   }`}
                 >
                   {item.name}
@@ -121,39 +132,44 @@ export default function RootLayout({ children }) {
           </div>
         </div>
 
+        {/* Main Content */}
         <main className="flex-grow">{children}</main>
 
-        <footer className="bg-gray-900 text-white py-8 lg:py-12">
+        {/* Footer */}
+        <footer className="bg-gray-50/80 text-gray-800 py-8 lg:py-12 border-t-4 border-red-600 backdrop-blur-sm">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div>
-                <h3 className="text-lg lg:text-xl font-semibold mb-4">
+                <h3 className="text-lg lg:text-xl font-semibold mb-4 text-red-600">
                   Contact Us
                 </h3>
-                <p>(555) 123-4567</p>
-                <p>contact@construction.com</p>
-                <p>123 Builder Street</p>
+                <p className="text-gray-700">(555) 123-4567</p>
+                <p className="text-gray-700">contact@construction.com</p>
+                <p className="text-gray-700">123 Builder Street</p>
               </div>
               <div>
-                <h3 className="text-lg lg:text-xl font-semibold mb-4">
+                <h3 className="text-lg lg:text-xl font-semibold mb-4 text-red-600">
                   Quick Links
                 </h3>
                 {quickLinks.map((item) => (
-                  <p key={item.name}>
+                  <p
+                    key={item.name}
+                    className="text-gray-700 hover:text-red-600 transition-colors"
+                  >
                     <Link href={item.path}>{item.name}</Link>
                   </p>
                 ))}
               </div>
               <div>
-                <h3 className="text-lg lg:text-xl font-semibold mb-4">
+                <h3 className="text-lg lg:text-xl font-semibold mb-4 text-red-600">
                   Working Hours
                 </h3>
-                <p>Monday - Friday: 8AM - 6PM</p>
-                <p>Saturday: 9AM - 4PM</p>
-                <p>Sunday: Closed</p>
+                <p className="text-gray-700">Monday - Friday: 8AM - 6PM</p>
+                <p className="text-gray-700">Saturday: 9AM - 4PM</p>
+                <p className="text-gray-700">Sunday: Closed</p>
               </div>
             </div>
-            <p className="mt-8 border-t pt-8 text-center">
+            <p className="mt-8 border-t border-gray-300 pt-8 text-center text-gray-600">
               &copy; {year} Construction Company. All rights reserved.
             </p>
           </div>

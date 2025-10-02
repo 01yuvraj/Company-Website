@@ -12,14 +12,14 @@ export default function ContactPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       {/* Page Header */}
       <div className="bg-white py-12 shadow-sm">
         <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-4xl font-bold text-gray-900 text-center mb-2">
+          <h1 className="text-4xl font-bold text-red-600 text-center mb-2">
             Contact Us
           </h1>
-          <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto">
+          <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto">
             We&apos;re here to answer any questions you may have. Reach out and we&apos;ll respond as soon as possible.
           </p>
         </div>
@@ -29,8 +29,8 @@ export default function ContactPage() {
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+          <div className="bg-white rounded-lg shadow-lg p-8 border-t-4 border-red-600">
+            <h2 className="text-2xl font-bold text-red-600 mb-6">
               Send Us a Message
             </h2>
             <form className="space-y-6">
@@ -40,7 +40,7 @@ export default function ContactPage() {
                 </label>
                 <input
                   type="text"
-                  className={`${styles.inputField} w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500`}
+                  className={`${styles.inputField} w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600`}
                   placeholder="Your Name"
                 />
               </div>
@@ -50,7 +50,7 @@ export default function ContactPage() {
                 </label>
                 <input
                   type="email"
-                  className={`${styles.inputField} w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500`}
+                  className={`${styles.inputField} w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600`}
                   placeholder="your@email.com"
                 />
               </div>
@@ -59,13 +59,13 @@ export default function ContactPage() {
                   Message
                 </label>
                 <textarea
-                  className={`${styles.inputField} w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 h-32`}
+                  className={`${styles.inputField} w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 h-32`}
                   placeholder="Your message..."
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className={`${styles.submitButton} w-full py-3 px-6 rounded-lg transition duration-300 bg-yellow-500 text-white font-medium hover:bg-yellow-600`}
+                className="w-full py-3 px-6 rounded-lg transition duration-300 bg-red-600 text-white font-medium hover:bg-red-700"
               >
                 Send Message
               </button>
@@ -73,7 +73,7 @@ export default function ContactPage() {
           </div>
 
           {/* Google Map */}
-          <div className="h-80 lg:h-auto rounded-lg overflow-hidden shadow-lg">
+          <div className="h-80 lg:h-auto rounded-lg overflow-hidden shadow-lg border-4 border-red-600">
             {isClient && (
               <iframe
                 title="Google Map - Highlighted Location"
@@ -92,7 +92,7 @@ export default function ContactPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-yellow-500 py-16 mt-12">
+      <div className="bg-red-600 py-16 mt-12">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Let&apos;s Start a Conversation
@@ -103,7 +103,7 @@ export default function ContactPage() {
           </p>
           <Link
             href="/"
-            className="inline-block bg-white text-yellow-500 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-300"
+            className="inline-block bg-white text-red-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-300"
           >
             Return Home
           </Link>

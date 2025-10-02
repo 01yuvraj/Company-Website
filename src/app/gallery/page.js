@@ -45,10 +45,10 @@ export default function GalleryPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Page Header */}
-      <div className="bg-gray-100 py-12">
-        <div className="max-w-7xl mx-auto px-4 text-center"> {/* Center Alignment */}
-          <h1 className="text-4xl font-bold text-gray-900 mb-6">Our Gallery</h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto"> {/* Center Text */}
+      <div className="bg-white py-12 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h1 className="text-4xl font-bold text-red-600 mb-6">Our Gallery</h1>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             Explore some of our completed projects and see the quality and attention to detail that we bring to every job. Each project reflects our commitment to excellence in construction.
           </p>
         </div>
@@ -58,15 +58,15 @@ export default function GalleryPage() {
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {images.map((image, index) => (
-            <div key={index} className={`${styles.galleryItem} overflow-hidden rounded-lg shadow-md`}>
+            <div key={index} className={`${styles.galleryItem} overflow-hidden rounded-lg shadow-lg border-t-4 border-red-600`}>
               <img
                 src={image.src}
                 alt={image.alt}
                 className="w-full h-64 object-cover transition-transform duration-500 ease-in-out transform hover:scale-105"
               />
               <div className="p-4">
-                <h3 className="text-xl font-semibold text-gray-900">{image.title}</h3>
-                <p className="text-gray-600">{image.description}</p>
+                <h3 className="text-xl font-semibold text-red-600">{image.title}</h3>
+                <p className="text-gray-700">{image.description}</p>
               </div>
             </div>
           ))}
@@ -74,13 +74,13 @@ export default function GalleryPage() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-yellow-500 py-16 mt-12">
+      <div className="bg-red-600 py-16 mt-12">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Interested in Working with Us?</h2>
           <p className="text-white text-lg mb-8">Contact us today to learn more about our projects and services</p>
           <Link
             href="/contact"
-            className="inline-block bg-white text-yellow-500 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-300"
+            className="inline-block bg-white text-red-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-300"
           >
             Get in Touch
           </Link>
