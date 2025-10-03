@@ -7,12 +7,6 @@ import { usePathname } from "next/navigation";
 import "./globals.css";
 import { Menu } from "lucide-react";
 
-// Custom CSS for black outline
-const outlinedText = {
-  WebkitTextStroke: "1px black",
-  color: "red", // fill inside
-};
-
 export default function RootLayout({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showRibbon, setShowRibbon] = useState(true);
@@ -57,11 +51,8 @@ export default function RootLayout({ children }) {
     <html lang="en" className="scroll-smooth">
       <body className="flex flex-col min-h-screen bg-gray-50">
         {/* Header */}
-        <header className="flex justify-between items-center p-2 lg:p-4 bg-gray-50/80 shadow-md text-gray-800 border-b-4 border-red-600 backdrop-blur-sm">
-          <div
-            className="text-2xl lg:text-5xl font-bold tracking-tight"
-            style={outlinedText}
-          >
+        <header className="flex justify-between items-center p-2 lg:p-4 bg-gray-50/80 shadow-md text-gray-800 border-b-4 border-red-600 backdrop-blur-sm relative">
+          <div className="company-name text-2xl lg:text-5xl font-bold tracking-tight">
             One Link Precast
           </div>
           <div className="flex-shrink-0"></div>
@@ -70,7 +61,7 @@ export default function RootLayout({ children }) {
             width={110}
             height={110}
             alt="Company Logo"
-            className="w-36 lg:w-44 h-16 lg:h-20 object-contain -ml-12"
+            className="logo w-36 lg:w-44 h-16 lg:h-20 object-contain"
           />
         </header>
 
@@ -177,6 +168,44 @@ export default function RootLayout({ children }) {
             </p>
           </div>
         </footer>
+
+        {/* Mobile-only adjustments and enhanced company name styling */}
+        <style jsx>{`
+          .company-name {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            position: relative;
+          }
+
+          @media (max-width: 768px) {
+            header {
+              display: flex;
+              align-items: center;
+              position: relative;
+              padding-right: 0;
+            }
+            .company-name {
+              font-size: 1.8rem;
+            }
+            .logo {
+              position: absolute;
+              right: 0;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+
+          @media (min-width: 769px) {
+            .company-name {
+              font-size: 3rem;
+            }
+          }
+        `}</style>
       </body>
     </html>
   );
