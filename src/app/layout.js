@@ -66,7 +66,7 @@ export default function RootLayout({ children }) {
           </div>
           <div className="flex-shrink-0"></div>
           <Image
-            src="/images/logo.jpg"
+            src="/images/Logo.jpg"
             width={110}
             height={110}
             alt="Company Logo"
